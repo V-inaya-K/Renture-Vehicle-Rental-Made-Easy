@@ -43,7 +43,7 @@ class _LoginState extends State<Login> {
     Navigator.pushReplacement(
       context,
       MaterialPageRoute(
-        builder: (context) => SplashScreen(nextScreen: MyIntro()),
+        builder: (context) => MyIntro(),
       ),
     );
   }
@@ -62,18 +62,19 @@ class _LoginState extends State<Login> {
             Container(
               height: 150,
               decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                   Color.fromARGB(255, 20, 126, 158),
-                    Color.fromARGB(255, 50, 214, 214)
-                    // Color.fromARGB(255, 0, 29, 107)
-                  ],
-                  begin: Alignment.topCenter,
-                  end: Alignment.bottomCenter,
-                ),
+                color: Colors.blueAccent,
+                // gradient: LinearGradient(
+                //   colors: [
+                //    Color.fromARGB(255, 20, 126, 158),
+                //     Color.fromARGB(255, 50, 214, 214)
+                //     // Color.fromARGB(255, 0, 29, 107)
+                //   ],
+                //   begin: Alignment.topCenter,
+                //   end: Alignment.bottomCenter,
+                // ),
                 borderRadius: BorderRadius.only(
-                  bottomLeft: Radius.circular(40),
-                  bottomRight: Radius.circular(40),
+                  bottomLeft: Radius.circular(20),
+                  bottomRight: Radius.circular(20),
                 ),
               ),
               child: Center(
@@ -193,7 +194,7 @@ class _LoginState extends State<Login> {
                           ? "Already have an account? Login"
                           : "Don't have an account? Sign Up",
                       style: GoogleFonts.poppins(
-                          fontSize: 14, color: Colors.blue),
+                          fontSize: 14, color: Colors.blueAccent),
                     ),
                   ),
                 ],

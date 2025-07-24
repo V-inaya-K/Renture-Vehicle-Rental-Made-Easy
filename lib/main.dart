@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:vanilla_app/Splash.dart';
 // import 'package:vanilla_app/intro.dart';
 import 'package:renture/authentication/signup.dart';
+import 'package:renture/intro.dart';
 // import 'package:vanilla_app/PopupItems/Gemini_chatbot.dart';
 
 void main() {
@@ -22,7 +23,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Login(),
+      // home: Login(),
+      home: MyIntro(),
     );
   }
 }
