@@ -1,19 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:renture/pages/trips.dart';
+import 'package:renture/intro.dart';
 import 'package:translator/translator.dart';
 import 'package:renture/authentication/signup.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:renture/chatbot/Gemini_chatbot.dart';
 import 'package:google_fonts/google_fonts.dart';
-class MyIntro extends StatefulWidget {
+import 'package:renture/pages/services.dart';
+import 'package:renture/pages/trips.dart';
+
+class Account extends StatefulWidget {
   @override
-  _MyIntroState createState() => _MyIntroState();
+  _AccountState createState() => _AccountState();
 }
 
-class _MyIntroState extends State<MyIntro> {
+class _AccountState extends State<Account> {
   bool isLogin = true;
-  int _selectedIndex = 0;
+  int _selectedIndex = 3;
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +25,13 @@ class _MyIntroState extends State<MyIntro> {
         backgroundColor: Colors.blueAccent,
         elevation: 0,
         title: Text(
-          "Vanilla",
+          "My Account",
           style: TextStyle(fontSize: 25, color: Colors.white),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-
           if (index == 0) {
             Navigator.pushReplacement(
               context,
@@ -41,7 +40,17 @@ class _MyIntroState extends State<MyIntro> {
           } else if (index == 1) {
             Navigator.pushReplacement(
               context,
-              MaterialPageRoute(builder: (context) => Trips()),
+              MaterialPageRoute(builder: (context) => Account()),
+            );
+          } else if (index == 2) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Services()),
+            );
+          } else if (index == 3) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Account()),
             );
           }
         },
@@ -56,8 +65,7 @@ class _MyIntroState extends State<MyIntro> {
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.arrow_swap),
-            label: 'Trips',
-
+            label: 'Account',
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.square_grid_4x3_fill),
@@ -69,12 +77,11 @@ class _MyIntroState extends State<MyIntro> {
           )
         ],
       ),
-      body:Container(
+      body: Container(
         padding: EdgeInsets.all(10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.white,
-
         ),
         child: Column(
           children: [

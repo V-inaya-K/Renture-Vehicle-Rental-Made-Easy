@@ -1,19 +1,22 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:renture/pages/trips.dart';
+import 'package:renture/intro.dart';
 import 'package:translator/translator.dart';
 import 'package:renture/authentication/signup.dart';
 import 'package:flutter_carousel_widget/flutter_carousel_widget.dart';
 import 'package:renture/chatbot/Gemini_chatbot.dart';
 import 'package:google_fonts/google_fonts.dart';
-class MyIntro extends StatefulWidget {
+import 'package:renture/pages/account.dart';
+import 'package:renture/pages/services.dart';
+
+class Trips extends StatefulWidget {
   @override
-  _MyIntroState createState() => _MyIntroState();
+  _TripsState createState() => _TripsState();
 }
 
-class _MyIntroState extends State<MyIntro> {
+class _TripsState extends State<Trips> {
   bool isLogin = true;
-  int _selectedIndex = 0;
+  int _selectedIndex = 1;
 
   @override
   Widget build(BuildContext context) {
@@ -22,17 +25,13 @@ class _MyIntroState extends State<MyIntro> {
         backgroundColor: Colors.blueAccent,
         elevation: 0,
         title: Text(
-          "Vanilla",
+          "My Trips",
           style: TextStyle(fontSize: 25, color: Colors.white),
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         currentIndex: _selectedIndex,
         onTap: (index) {
-          setState(() {
-            _selectedIndex = index;
-          });
-
           if (index == 0) {
             Navigator.pushReplacement(
               context,
@@ -42,6 +41,16 @@ class _MyIntroState extends State<MyIntro> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(builder: (context) => Trips()),
+            );
+          } else if (index == 2) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Services()),
+            );
+          } else if (index == 3) {
+            Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(builder: (context) => Account()),
             );
           }
         },
@@ -57,7 +66,6 @@ class _MyIntroState extends State<MyIntro> {
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.arrow_swap),
             label: 'Trips',
-
           ),
           BottomNavigationBarItem(
             icon: Icon(CupertinoIcons.square_grid_4x3_fill),
@@ -69,12 +77,11 @@ class _MyIntroState extends State<MyIntro> {
           )
         ],
       ),
-      body:Container(
+      body: Container(
         padding: EdgeInsets.all(10),
         alignment: Alignment.center,
         decoration: BoxDecoration(
           color: Colors.white,
-
         ),
         child: Column(
           children: [
