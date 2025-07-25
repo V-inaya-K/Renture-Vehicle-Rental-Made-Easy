@@ -1,16 +1,15 @@
-# renture
+# 🚗Renture
 
-A new Flutter project.
+## ✨Demo Images
 
-## Getting Started
+## 🧲Tech Stack
 
-This project is a starting point for a Flutter application.
+## 🌀Workflow
 
-A few resources to get you started if this is your first Flutter project:
+## 🌊Run on your System
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+**Step1:** git clone https://github.com/V-inaya-K/Renture-Vehicle-Rental-Made-Easy.git<br />
+**Step2:** cd renture<br />
+**Step3:** Select device and run<br />
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 🚀Future Ambitions
